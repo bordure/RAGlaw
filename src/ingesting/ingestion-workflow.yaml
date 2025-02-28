@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: ingestion-workflow-
+spec:
+  entrypoint: ingestion-job
+  templates:
+  - name: ingestion-job
+    container:
+      image: dihake/ingestion:v0.02
+      command: ["python", "-u", "workflows/main.py"]
+      envFrom:
+      - secretRef:
+          name: openai
+    retryStrategy:
+      limit: 1
+    activeDeadlineSeconds: 1000
+
