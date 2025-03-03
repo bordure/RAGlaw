@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rag-frontend
+  name: rag-frontend
+  namespace: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rag-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rag-frontend
+    spec:
+      containers:
+      - image: dihake/rag-frontend:v0.2
+        name: rag-frontend
+        envFrom:
+        - secretRef:
+            name: streamlit
+        resources: {}
+status: {}

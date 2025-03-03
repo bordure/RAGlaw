@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rag-frontend
+  name: rag-frontend
+  namespace: frontend
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8501
+  selector:
+    app: rag-frontend
+  type: LoadBalancer
