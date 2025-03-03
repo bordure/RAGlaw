@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: rag-api
+  name: rag-api
+  namespace: rag-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rag-api
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: rag-api
+    spec:
+      containers:
+      - image: dihake/rag-api:v0.06
+        name: rag-api
+        resources: {}
+        envFrom:
+        - secretRef:
+            name: openai
+status: {}
