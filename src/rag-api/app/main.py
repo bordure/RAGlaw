@@ -75,7 +75,7 @@ async def get_context(query: str) -> str:
     context = ' '.join(context_array)
     return context 
 
-@app.post('/v1/rag_chat_completion', tags=['Milvus', 'OpenAI'], response_model=Output, summary='Returns OpenAI chat completion with given context from Milvus DB')
+@app.post('/v1/rag_chat_completion', tags=['OpenAI'], response_model=Output, summary='Returns OpenAI chat completion with given context from Milvus DB')
 async def rag_chat_completion(prompt: str) -> str:
     context = await get_context(prompt)
     template = f""" 
