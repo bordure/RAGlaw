@@ -2,6 +2,8 @@
 
 ## Overview
 This project is RAG model that embedds Polish's Penal Code and answers questions with gpt-4o-mini LLM model. It's deployed on the Azure Kubernetes Service (AKS) 
+![ChatUI](img/chatUI.png "chatUI")
+
 
 ## Architecture
 ![Application architecture](img/architecture.png "Application architecture")
