@@ -1,8 +1,10 @@
-# RAGlaw Project Documentation
+# RAGlaw Project Documentation 
+![version](https://img.shields.io/badge/version-0.1-blue)
+## Overview  
+**RAGlaw** is a Retrieval-Augmented Generation (RAG) system designed to interpret and respond to questions based on the Polish Penal Code. It uses the **GPT-4o Mini** language model to generate contextually relevant answers, with information retrieved from a vector database. The solution is fully containerized and deployed on **Azure Kubernetes Service (AKS)** for scalability and ease of maintenance.
 
-## Overview
-This project is RAG model that embedds Polish's Penal Code and answers questions with gpt-4o-mini LLM model. It's deployed on the Azure Kubernetes Service (AKS) 
 ![ChatUI](img/chatUI.png "chatUI")
+
 
 
 ## Architecture
